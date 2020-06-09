@@ -1,1 +1,9 @@
+import pandas as pd 
 
+url = 'https://www.basketball-reference.com/leagues/NBA_2020_per_game.html'
+html= pd.read_html(url, header=0)
+df2020 = html[0]
+
+#data cleaning
+raw = df2020.drop(df2020[df2020.Age == 'Age'].index)
+raw
